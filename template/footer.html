@@ -1,0 +1,94 @@
+<footer class="bg-[#1D1F24]" @click="open=false">
+    <div class="container w-7xl mx-auto">
+        <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+            <div
+                class="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 justify-between items-start text-white py-9 md:gap-x-5 lg:gap-x-20 gap-y-10 lg:gap-y-10">
+                <div class="lg:col-span-1 flex flex-col space-y-3">
+                    <img src="https://www.graphicsprings.com/filestorage/stencils/68ea7d075a2064907de0c873ea1d81f3.png?width=500&height=500" width="40%"
+                        alt="">
+                    <p class="text-[#999]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae nihil doloribus voluptate ab, aliquam commodi unde
+                    dignissimos pariatur corporis labore, laboriosam perspiciatis atque adipisci magnam ea quam doloremque quas obcaecati!</p>
+                </div>
+                <div
+                    class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-5 gap-y-10">
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-bold pb-3">প্রয়োজনীয় লিংক</h1>
+                        <div class="flex flex-col space-y-2  text-[#999]">
+                            <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                            <a href="#" class="hover:text-white">ব্লগ</a>
+                            <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                            <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                            <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                            <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                            <a href="#" class="hover:text-white">শর্তাবলী</a>
+                            <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-bold pb-3">জনপ্রিয়</h1>
+                        <div class="flex flex-col space-y-2  text-[#999]">
+                            <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                            <a href="#" class="hover:text-white">ব্লগ</a>
+                            <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                            <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                            <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                            <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                            <a href="#" class="hover:text-white">শর্তাবলী</a>
+                            <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-bold pb-3">যোগাযোগ</h1>
+                        <div class="flex flex-col space-y-2  text-[#999]">
+                            <a href="https://fb.com/habibur.rahman.sobuj.bd" class="hover:text-white">Habibur Rahman Sobuj</a>
+                            <a href="https://hstu.ac.bd" class="hover:text-white">Hajee Mohammad Danesh Science & Technology University</a>
+                            <h1 class="hover:text-white">Dinajpur-5200</h1>
+                            <a href="tel:+8801797972527"  class="hover:text-white">01797972527</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="bg-[#22252C] py-6">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <p class="text-white">Copyright © {% now "Y" %} Habibur Rahman Sobuj</p>
+            </div>
+        </div>
+
+
+    </div>
+</footer>
+
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "103650429048632");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v14.0'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>

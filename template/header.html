@@ -1,0 +1,126 @@
+<style>
+    :focus-visible {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+input[type="text" i] {
+    padding: 0px 10px !important;
+}
+</style>
+<header class="mb-10">
+    <div class="container w-7xl mx-auto">
+        <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+            <div class="flex justify-between items-center py-6">
+
+                <div class="flex justify-start items-center md:space-x-0 space-x-5">
+                    <div class="flex md:hidden">
+                        <div @click="open=!open">
+                            <i data-feather="menu" class="hover:text-red-500 text-[#F29434]"></i>
+                        </div>
+                        <!-- side bar  -->
+                        <div x-show="open" class="absolute z-50 left-0 top-0 w-full" x-cloak>
+                            <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+                                x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                                x-transition:leave="transition ease-in-out duration-300 transform"
+                                x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
+                                class="bg-[#F29434] h-screen max-h-screen">
+                                <div class="flex flex-col text-white px-5 py-2">
+                                    <div class="flex justify-between border-b border-white py-2">
+                                        <div>
+                                            <a href="{% url 'App_Home:index' %}"><i data-feather="home"></i></a>
+                                        </div>
+                                        <button @click="open=false" class="inline-flex justify-start">
+                                            <i data-feather="x"></i>
+                                        </button>
+                                    </div>
+                                    <!-- new  -->
+                                    <div class="flex flex-col py-5 space-y-3">
+                                        <a href="#" class="hover:bg-[#F23534] bg-[#F23534] text-white hover:text-white py-2 px-4">হোম</a>
+                                        <a href="{% url 'App_Home:books' %}" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বই</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">জেনারেল বই</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বিষয়</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">লেখক</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রকাশক</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বইমেলা ২০২২</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রি-অর্ডার</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রসাধনী</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">পোশাক</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">ব্লগ</a>
+                                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">স্টেশনারী</a>
+
+                                        <div class="flex space-x-1 -ml-2 mt-10 sm:space-x-3">
+                                            <a href="https://fb.com/habibur.rahman.sobuj.75"><i data-feather="facebook" class="hover:text-blue-500 text-[#fff]"></i></a>
+                                             <a href="https://fb.com/habibur.rahman.sobuj.75"><i data-feather="twitter" class="hover:text-blue-300 text-[#fff]"></i></a>
+                                             <a href="https://fb.com/habibur.rahman.sobuj.75"><i data-feather="youtube" class="hover:text-red-500 text-[#fff]"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- end new  -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inline-flex justify-center items-center">
+                        <a href="{% url 'App_Home:index' %}"><img src="https://www.graphicsprings.com/filestorage/stencils/68ea7d075a2064907de0c873ea1d81f3.png?width=500&height=500"
+                                alt="Logo" class="w-24"></a>
+                    </div>
+                </div>
+                <div class="w-full hidden md:block">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="flex space-x-0  mx-32 ">
+                            <div class="flex border-b-2 border-[#F29434] w-full">
+
+                                <input type="text" name="search" placeholder=" বইয়ের নাম ও লেখক দিয়ে অনুসন্ধান করুন"
+                                    class="border-t border-l border-r border-gray-200 w-full ring-0">
+
+                            </div>
+                            <div>
+                                <button type="submit"
+                                    class="bg-[#F29434] text-white px-3 py-2 rounded-tr-md rounded-br-md"><i
+                                        data-feather="search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex space-x-1 sm:space-x-3">
+                    <a href="https://fb.com/habibur.rahman.sobuj.bd"><i data-feather="facebook" class="hover:text-blue-500 text-[#F29434]"></i></a>
+                    <a href="https://fb.com/habibur.rahman.sobuj.bd"><i data-feather="twitter" class="hover:text-blue-300 text-[#F29434]"></i></a>
+                    <a href="https://fb.com/habibur.rahman.sobuj.bd"><i data-feather="youtube" class="hover:text-red-500 text-[#F29434]"></i></a>
+                </div>
+            </div>
+            <div class="w-full block md:hidden">
+                <div class="flex space-x-0  mx-2 ">
+                    <div class="flex border-b-2 border-[#F29434] w-full">
+                        <input type="text" placeholder=" বইয়ের নাম ও লেখক দিয়ে অনুসন্ধান করুন"
+                            class="border-t border-l border-r border-gray-200 w-full">
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-[#F29434] text-white px-3 py-2 rounded-tr-md rounded-br-md"><i
+                                data-feather="search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-y border-gray-200 hidden md:block">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div class="flex justify-start items-center space-x-0">
+                    <a href="#" class="hover:bg-[#F23534] bg-[#F23534] text-white hover:text-white py-2 px-4">হোম</a>
+                    <a href="{% url 'App_Home:books' %}" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বই</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">জেনারেল বই</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বিষয়</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">লেখক</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রকাশক</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বইমেলা ২০২২</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রি-অর্ডার</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রসাধনী</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">পোশাক</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">ব্লগ</a>
+                    <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">স্টেশনারী</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>

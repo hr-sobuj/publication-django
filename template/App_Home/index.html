@@ -1,0 +1,188 @@
+{% load discount_tag %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Publication</title>
+    <!-- shortcut icon  -->
+    <link rel="shortcut icon" href="https://wafilife-media.wafilife.com/uploads/2014/12/fevicon.png" />
+    <!-- alpine js  -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- feather icon  -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .owl-theme {
+            position: relative;
+        }
+
+        .owl-theme .owl-dots {
+            text-align: center;
+            position: absolute;
+            left: 47%;
+            bottom: 10px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .custom-hidden {
+                display: none;
+            }
+        }
+    </style>
+    <!-- owl  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(function () {
+            // Owl Carousel
+            var owl = $("#slide");
+            owl.owlCarousel({
+                items: 1,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                loop: true,
+                nav: false,
+                dots: true,
+            });
+        });
+
+    </script>
+
+</head>
+
+<body x-data="{open:false}" x-bind:class="open?'overflow-hidden':''">
+
+    <!-- header  -->
+    {% include 'header.html' %}
+
+    <!-- slide  -->
+    <section class="hidden md:block" @click="open=false">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div class="owl-carousel owl-theme" id="slide">
+                    <div class="item">
+                        <img src="https://img.presentationload.com/FT006/LowPoly-Triangles_FT006_001_16x9_xl.png"
+                            alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="https://img.presentationload.com/FT006/LowPoly-Triangles_FT006_005_16x9_xl.png" alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="https://i.pinimg.com/originals/9b/9b/68/9b9b6801058d6663f6edb1bd8812cc66.png"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- book card  -->
+    <section @click="open=false" class="py-16">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div
+                    class="grid grid-cols-1 auto-rows-{1fr} sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 gap-x-10 justify-center items-center gap-x-10 gap-y-16 md:gap-y-10">
+                    {% if books %}
+                    {% for book in books|slice:"12" %}
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="/media/{{ book.main_cover}}" alt="" class="aspect-auto">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>{{book.discount}}%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a
+                                        href="{% url 'App_Home:details' pk=book.pk %}"
+                                        class="hover:underline hover:decoration-solid ">{{book.book_title}}</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">{{book.writer}}</h1>
+                                {% if book.discount %}
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">{{book.price}} <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">{{ book.price|discount_price:book.discount }} ৳</span>
+                                </h1>
+                                {% else %}
+                                <h1 class="flex space-x-3">
+                                    <span class="text-red-500 text-md font-semibold">{{book.price}} ৳</span>
+                                </h1>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <section class="col-span-6 mb-10">
+                        <div class="container w-7xl mx-auto">
+                            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]"></div>
+                            <div class="flex flex-col justify-center items-center">
+                    
+                                <div>
+                                    <img src="https://img.pikbest.com/png-images/qianku/404-error-model_2369179.png!bw700" alt="">
+                                </div>
+                                <!-- <h1 class="text-7xl font-bold">৪০৪</h1> -->
+                                <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold text-center">বই পাওয়া যায়নি!!!</h1>
+                            </div>
+                    
+                        </div>
+                    </section>
+                    {% endif %}
+                    
+                </div>
+
+                <div class="flex justify-center items-center ">
+                    <a href="{% url 'App_Home:books' %}" class="bg-[#F23534] px-4 py-2 rounded-lg text-white shadow">আরও দেখুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer  -->
+    {% include 'footer.html' %}
+
+    <script>
+        feather.replace()
+    </script>
+</body>
+
+</html>

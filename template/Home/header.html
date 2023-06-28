@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar - Alpine JS</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .oswald {
+            font-family: "Oswald";
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .custom-hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-white py-6 relative">
+        <div class="flex justify-between items-center mx-12">
+            <div x-data="{open:false}" class="flex lg:hidden">
+                <div>
+                    <i @click="open=true" class="fa-solid fa-bars"></i>
+                </div>
+                <div x-show="open" class="absolute z-50 left-0 top-0 w-[65%]" x-cloak>
+                    <!-- <div
+                x-show="open"
+                x-transition:enter="transition-opacity ease-linear duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity ease-linear duration-300"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+              ></div> -->
+                    <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+                        x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                        x-transition:leave="transition ease-in-out duration-300 transform"
+                        x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
+                        <div class="bg-black flex flex-col h-screen text-white p-2">
+                            <button @click="open=false" class="inline-flex justify-start">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <!-- //new  -->
+                            <div class="flex flex-col">
+                                <a href="#">
+                                    <span
+                                        className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Home</span>
+                                </a>
+                                <a href="#">
+                                    <span
+                                        className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">About</span>
+                                </a>
+                                <a href="#"><span
+                                        class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Roadmap</span></a>
+                                <a href="#"><span
+                                        class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Team</span></a>
+                            </div>
+                            <!-- end new  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-10">
+                <div>
+                    <a href="#"><img
+                            src="https://cdn.shopify.com/s/files/1/2096/3333/files/logo-_-0820_120x.png?v=1629449663"
+                            alt="" /></a>
+                </div>
+                <div
+                    class="custom-hidden sm:hidden lg:flex items-center space-x-10 text-lg font-semibold oswald tracking-[.2rem]">
+                    <div x-data="{open:false}">
+                        <a href="#" x-on:click="open=!open" class="outline-b outline-offset-2">
+                            Electric Skateboards
+                            <template x-if="open">
+                                <i class="fa-solid fa-angle-up"></i>
+                            </template>
+                            <template x-if="!open">
+                                <i class="fa-solid fa-angle-down"></i>
+                            </template>
+                        </a>
+                        <div x-transition x-show="open" x-cloak class="relative">
+                            <span x-show="open"
+                                class="h-[.13rem] w-full text-transparent bg-black z-[100] absolute bottom-[-1.7rem] left-[0rem]"></span>
+                        </div>
+                        <div x-cloak x-show="open" x-transition
+                            class="w-full bg-white border-t border-gray-300 z-[100] absolute bottom-[-56px] left-[0px]">
+                            <div class="flex flex-col container mx-32">
+                                <a href="#">Link</a>
+                                <a href="#">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+            <div class="flex space-x-5 justify-center initial-scale">
+                <div>
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

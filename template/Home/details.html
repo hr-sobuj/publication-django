@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Publication</title>
+    <!-- shortcut icon  -->
+    <link rel="shortcut icon" href="https://wafilife-media.wafilife.com/uploads/2014/12/fevicon.png" />
+    <!-- alpine js  -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- feather icon  -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- <style>
+            .owl-theme {
+                position: relative;
+            }
+        
+            .owl-carousel .owl-nav button.owl-prev {
+                position: absolute;
+                left: 34px;
+                bottom: 50%;
+                background-color: white;
+                width: 45px;
+                height: auto;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                color: #020000;
+                font-size: 2rem;
+            }
+        
+            .owl-carousel .owl-nav button.owl-next {
+                position: absolute;
+                right: 34px;
+                bottom: 50%;
+                background-color: white;
+                width: 45px;
+                height: auto;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                color: #020000;
+                font-size: 2rem;
+            }
+        </style> -->
+        <!-- lightbox2  -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.css'>
+
+    <!-- owl  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .owl-theme {
+            position: relative;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            top: -78px;
+            right: 32px;
+            padding: 0px !important;
+            font-size: 32px;
+            width: 31px;
+            height: auto;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            top: -78px;
+            right: 10px;
+            padding: 0px !important;
+            font-size: 32px;
+            width: 31px;
+            height: auto;
+        }
+
+        .owl-theme .owl-nav [class*=owl-]:hover {
+            background: transparent !important;
+            color: #f00;
+            text-decoration: none;
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .custom-hidden {
+                display: none;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@2.x.x/dist/alpine-clipboard.js"
+        defer></script>
+
+</head>
+
+<body x-data="{open:false}" x-bind:class="open?'overflow-hidden':''">
+
+    <!-- header  -->
+    <header class="mb-10">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div class="flex justify-between items-center py-6">
+
+                    <div class="flex justify-start items-center md:space-x-0 space-x-5">
+                        <div class="flex md:hidden">
+                            <div @click="open=!open">
+                                <i data-feather="menu" class="hover:text-red-500 text-[#F29434]"></i>
+                            </div>
+                            <!-- side bar  -->
+                            <div x-show="open" x-cloak class="absolute z-50 left-0 top-0 w-full" x-cloak>
+                                <div x-show="open" x-cloak x-transition:enter="transition ease-in-out duration-300 transform"
+                                    x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                                    x-transition:leave="transition ease-in-out duration-300 transform"
+                                    x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
+                                    class="bg-[#F29434] h-screen max-h-screen">
+                                    <div class="flex flex-col text-white px-5 py-2">
+                                        <div class="flex justify-between border-b border-white py-2">
+                                            <div>
+                                                <a href="#"><i data-feather="home"></i></a>
+                                            </div>
+                                            <button @click="open=false" class="inline-flex justify-start">
+                                                <i data-feather="x"></i>
+                                            </button>
+                                        </div>
+                                        <!-- new  -->
+                                        <div class="flex flex-col py-5 space-y-3">
+                                            <a href="#">
+                                                <span
+                                                    className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Home</span>
+                                            </a>
+                                            <a href="#">
+                                                <span
+                                                    className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">About</span>
+                                            </a>
+                                            <a href="#"><span
+                                                    class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Roadmap</span></a>
+                                            <a href="#"><span
+                                                    class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Team</span></a>
+
+                                            <div class="flex space-x-1 -ml-2 mt-10 sm:space-x-3">
+                                                <i data-feather="facebook" class="hover:text-blue-500 text-[#fff]"></i>
+                                                <i data-feather="twitter" class="hover:text-blue-300 text-[#fff]"></i>
+                                                <i data-feather="youtube" class="hover:text-red-500 text-[#fff]"></i>
+                                            </div>
+                                        </div>
+                                        <!-- end new  -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="/"><img src="https://wafilife-media.wafilife.com/uploads/2022/03/logo-v22.png"
+                                    alt="Logo"></a>
+                        </div>
+                    </div>
+                    <div class="w-full hidden md:block">
+                        <div class="flex space-x-0  mx-32 ">
+                            <div class="flex border-b-2 border-[#F29434] w-full">
+                                <input type="text" placeholder=" বইয়ের নাম ও লেখক দিয়ে অনুসন্ধান করুন"
+                                    class="border-t border-l border-r border-gray-200 w-full">
+                            </div>
+                            <div>
+                                <button type="submit"
+                                    class="bg-[#F29434] text-white px-3 py-2 rounded-tr-md rounded-br-md"><i
+                                        data-feather="search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-1 sm:space-x-3">
+                        <i data-feather="facebook" class="hover:text-blue-500 text-[#F29434]"></i>
+                        <i data-feather="twitter" class="hover:text-blue-300 text-[#F29434]"></i>
+                        <i data-feather="youtube" class="hover:text-red-500 text-[#F29434]"></i>
+                    </div>
+                </div>
+                <div class="w-full block md:hidden">
+                    <div class="flex space-x-0  mx-2 ">
+                        <div class="flex border-b-2 border-[#F29434] w-full">
+                            <input type="text" placeholder=" বইয়ের নাম ও লেখক দিয়ে অনুসন্ধান করুন"
+                                class="border-t border-l border-r border-gray-200 w-full">
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="bg-[#F29434] text-white px-3 py-2 rounded-tr-md rounded-br-md"><i
+                                    data-feather="search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-y border-gray-200 hidden md:block">
+            <div class="container w-7xl mx-auto">
+                <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                    <div class="flex justify-start items-center space-x-0">
+                        <a href="#"
+                            class="hover:bg-[#F23534] bg-[#F23534] text-white hover:text-white py-2 px-4">হোম</a>
+                        <a href="details" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বই</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">জেনারেল বই</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বিষয়</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">লেখক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রকাশক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বইমেলা ২০২২</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রি-অর্ডার</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রসাধনী</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">পোশাক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">ব্লগ</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">স্টেশনারী</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- details  -->
+    <section @click="open=false">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center mb-10">
+                        <div class="flex flex-col ">
+
+                            <div class="relative">
+                                <div class="inline-flex justify-center items-center">
+                                    <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png" alt=""
+                                         width="70%">
+                                </div>
+                                <div
+                                    class="absolute top-[-15px] left-[75px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col h-full justify-center items-center md:justify-center md:items-start">
+                            <h1 class="text-2xl font-bold mb-4">মমাতি</h1>
+                            <table class="text-md font-medium  w-full text-center md:text-left">
+                                <tr class="border-b border-gray-100 py-3">
+                                    <td>লেখক</td>
+                                    <td class="">:</td>
+                                    <td>রশীদ জামীল</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 py-3">
+                                    <td>প্রকাশক</td>
+                                    <td>:</td>
+                                    <td>কালান্তর প্রকাশনী</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 py-3">
+                                    <td>পৃষ্ঠাসংখ্যা</td>
+                                    <td>:</td>
+                                    <td>১৪৪</td>
+                                </tr>
+                                <tr class="border-b border-gray-100 py-3">
+                                    <td>কোয়ালিটি</td>
+                                    <td>:</td>
+                                    <td>হার্ডকভার</td>
+                                </tr>
+                            </table>
+                            <div class="mt-10 ">
+                                <style>
+                                    .tooltip {
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+
+                                    .tooltip .tooltiptext {
+                                        visibility: hidden;
+                                        width: 140px;
+                                        background-color: #555;
+                                        color: #fff;
+                                        text-align: center;
+                                        border-radius: 6px;
+                                        padding: 5px;
+                                        position: absolute;
+                                        z-index: 1;
+                                        bottom: 150%;
+                                        left: 50%;
+                                        margin-left: -75px;
+                                        opacity: 0;
+                                        transition: opacity 0.3s;
+                                    }
+
+                                    .tooltip .tooltiptext::after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 100%;
+                                        left: 50%;
+                                        margin-left: -5px;
+                                        border-width: 5px;
+                                        border-style: solid;
+                                        border-color: #555 transparent transparent transparent;
+                                    }
+
+                                    .tooltip:hover .tooltiptext {
+                                        visibility: visible;
+                                        opacity: 1;
+                                    }
+                                </style>
+                                <input type="text" value="মমাতি" class="hidden" id="myInput">
+                                <p>বইটি কিনতে বইয়ের বিস্তারিত কপি করে আমাদের ফেসবুকে মেসেজ দিন</p>
+                                <div class="tooltip">
+                                    <button onclick="myFunction()" onmouseout="outFunc()">
+                                        <span class="tooltiptext" id="myTooltip">বইটি কিনতে বইয়ের বিস্তারিত কপি করে
+                                            আমাদের ফেসবুকে মেসেজ দিন</span>
+                                        <div class="flex">কপি করুন <i data-feather="copy"></i></div>
+                                    </button>
+                                </div>
+                                <script>
+                                    function myFunction() {
+                                        var copyText = document.getElementById("myInput");
+                                        copyText.select();
+                                        copyText.setSelectionRange(0, 99999);
+                                        navigator.clipboard.writeText(copyText.value);
+
+                                        var tooltip = document.getElementById("myTooltip");
+                                        tooltip.innerHTML = "বইয়ের বিস্তারিত কপি";
+                                        // tooltip.innerHTML = "Copied: " + copyText.value;
+                                    }
+
+                                    function outFunc() {
+                                        var tooltip = document.getElementById("myTooltip");
+                                        // tooltip.innerHTML = "Copy to clipboard";
+                                    }
+                                </script>
+                            </div>
+                            <div class="mt-10 flex space-x-5">
+                                <button
+                                    class="bg-[#F23534] text-white px-6 py-3 rounded-sm shadow-xl hover:bg-[#e30302]">অর্ডার
+                                    করুন</button>
+                                <a href="tel:+4733378901"
+                                    class="bg-[#f29434] text-white px-6 py-3 rounded-sm shadow-xl hover:bg-[#e67605]">কল
+                                    করুন</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- tab  -->
+                    <div x-data="{tab:1}">
+                        <div>
+                            <div
+                                class="flex space-x-3 sm:space-x-20 justify-start items-center text-lg  sm:text-xl border-2 border-[#e5e5e5] px-10 py-3">
+                                <button @click="tab=1"
+                                    :class="{'border-b-2 border-[#f23534] text-[#f23534] font-normal':tab===1}">বিস্তারিত</button>
+                                <button @click="tab=2"
+                                    :class="{'border-b-2 border-[#f23534] text-[#f23534] font-normal':tab===2}">বইয়ের
+                                    বিবরণ</button>
+                                <button @click="tab=3"
+                                    :class="{'border-b-2 border-[#f23534] text-[#f23534] font-normal':tab===3}">বই
+                                    কাভার</button>
+                            </div>
+                            <div x-show="tab===1" x-cloak>
+                                <p class="pt-5 text-lg ml-1 text-justify">
+                                    নবিজি কবর মুবারকে বিশেষ ব্যবস্থায় জীবিত আছেন। যে জীবনকে কেউ বলেন হায়াতে বারজাখি,
+                                    কেউ বলেন উখরবি। নবিজির এই বিশেষ
+                                    জীবনকে বলা হয় ‘হায়াতুন নবি’। যারা হায়াতুন নবি স্বীকার করেন না, তাদের নাম মমাতি।
+                                    হায়াতুন নবির আকিদা কুরআনুল কারিম,
+                                    আহাদিসে রাসুল ও ইজমায়ে উম্মতের অকাট্য দালায়িল দ্বারা প্রমাণিত। গ্রন্থটি পড়ার পর
+                                    আশা করি আকিদায়ে হায়াতুন নবি
+                                    সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম নিয়ে সকল বিভ্রান্তি দূর হবে।
+                                </p>
+                            </div>
+                            <div x-show="tab===2" x-cloak>
+                                <div class="pt-5 ml-1 text-lg">
+                                    <table class="text-md font-medium  w-full">
+                                        <tr class="border-b border-gray-100 py-3">
+                                            <td>লেখক</td>
+                                            <td class="">:</td>
+                                            <td>রশীদ জামীল</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-100 py-3">
+                                            <td>প্রকাশক</td>
+                                            <td>:</td>
+                                            <td>কালান্তর প্রকাশনী</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-100 py-3">
+                                            <td>পৃষ্ঠাসংখ্যা</td>
+                                            <td>:</td>
+                                            <td>১৪৪</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-100 py-3">
+                                            <td>কোয়ালিটি</td>
+                                            <td>:</td>
+                                            <td>হার্ডকভার</td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div x-show="tab===3" x-cloak>
+                                <div class="pt-5 ml-1 text-lg">
+                                    <div class="grid grid-cols-6 gap-x-5 justify-center items-center mt-5">
+                                        <a class="example-image-link"
+                                            href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
+                                            data-lightbox="example-set"
+                                            data-title="Click the right half of the image to move forward.">
+                                            <img class="example-image"
+                                                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg"
+                                                alt="Golden Gate Bridge with San Francisco in distance">
+                                        </a>
+                                        <a class="example-image-link"
+                                            href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg"
+                                            data-lightbox="example-set"
+                                            data-title="Or press the right arrow on your keyboard.">
+                                            <img class="example-image"
+                                                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg"
+                                                alt="Forest with mountains behind">
+                                        </a>
+                                        <a class="example-image-link"
+                                            href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg"
+                                            data-lightbox="example-set"
+                                            data-title="The next image in the set is preloaded as you're viewing.">
+                                            <img class="example-image"
+                                                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg"
+                                                alt="Bicyclist looking out over hill at ocean">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- others book  -->
+                    <div class="flex space-y-5 flex-col pb-20 pt-16">
+                        <div class="flex justify-start items-center border-2 border-[#e5e5e5] px-10 py-3">
+                            <h1 class="text-xl font-normal text-center text-[#f23534]">আরো দেখুন…</h1>
+                        </div>
+
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://diybookcovers.com/3Dmockups/assets/images/thumbs/groupF.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="flex h-full">
+                                    <div
+                                        class="flex h-full flex-col p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                                        <div class="relative">
+                                            <img src="https://www.kindpng.com/picc/m/328-3282592_phishing-ebook-3d-book-cover-thumbnail-3d-book.png"
+                                                alt="">
+                                            <div
+                                                class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                                <span>40%</span>
+                                                <span>ছাড়</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                            <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                                    class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস
+                                                    (দুই
+                                                    খন্ড)</a>
+                                            </h1>
+                                            <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                            <h1 class="flex space-x-3">
+                                                <span class="text-[#888] text-md line-through">198 <span
+                                                        class="text-lg">৳</span></span>
+                                                <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="flex justify-start items-center">
+                            <button class="bg-orange-500 oswald tracking-[.16rem] px-7 py-3 text-white">
+                                View All Product
+                            </button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="bg-[#1D1F24]" @click="open=false">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div
+                    class="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 justify-between items-start text-white py-9 md:gap-x-5 lg:gap-x-20 gap-y-10 lg:gap-y-10">
+                    <div class="lg:col-span-1 flex flex-col space-y-3">
+                        <img src="https://wafilife-media.wafilife.com/uploads/2021/06/wafi-bangla-logo.png" width="48%"
+                            alt="">
+                        <p class="text-[#999]">Wafilife is a leading book shop in Bangladesh. We offer thousands of
+                            islamic, general and
+                            academic books at a discounted price. We provide good packaging with low shipping cost all
+                            over the Bangladesh.</p>
+                    </div>
+                    <div
+                        class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-5 gap-y-10">
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">প্রয়োজনীয় লিংক</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">জনপ্রিয়</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">যোগাযোগ</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-[#22252C] py-6">
+            <div class="container w-7xl mx-auto">
+                <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                    <p class="text-white">Copyright © 2022 Wafilife.com</p>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js'></script>
+    <script>lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })</script>
+
+    <script>
+        feather.replace()
+    </script>
+        <script>
+            $(function () {
+                // Owl Carousel
+                var owl = $(".owl-carousel");
+                owl.owlCarousel({
+                    items: 6,
+                    margin: 10,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    animateOut: 'fadeOut',
+                    animateIn: 'fadeIn',
+                    loop: true,
+                    nav: true,
+                    dots: false,
+                    responsive: {
+                        0: {
+                            items: 2,
+                            nav: true
+                        },
+                        600: {
+                            items: 4,
+                            nav: false
+                        },
+                        1000: {
+                            items: 5,
+                            nav: true,
+                            loop: false
+                        },
+                        1200: {
+                            items: 6,
+                            nav: true,
+                            loop: false
+                        }
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>

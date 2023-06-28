@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Publication</title>
+    <!-- shortcut icon  -->
+    <link rel="shortcut icon" href="https://wafilife-media.wafilife.com/uploads/2014/12/fevicon.png" />
+    <!-- alpine js  -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- feather icon  -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .owl-theme {
+            position: relative;
+        }
+
+        .owl-theme .owl-dots {
+            text-align: center;
+            position: absolute;
+            left: 47%;
+            bottom: 10px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .custom-hidden {
+                display: none;
+            }
+        }
+    </style>
+    <!-- owl  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(function () {
+            // Owl Carousel
+            var owl = $("#slide");
+            owl.owlCarousel({
+                items: 1,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                loop: true,
+                nav: false,
+                dots: true,
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- header  -->
+    <header class="mb-10">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div class="flex justify-between items-center py-6">
+
+                    <div class="flex justify-start items-center md:space-x-0 space-x-5">
+                        <div x-data="{open:false}" class="flex md:hidden">
+                            <div @click="open=true">
+                                <i data-feather="menu" class="hover:text-red-500 text-[#F29434]"></i>
+                            </div>
+                            <div x-show="open" class="absolute z-50 left-0 top-0 w-[65%]" x-cloak>
+                                <!-- <div
+                                        x-show="open"
+                                        x-transition:enter="transition-opacity ease-linear duration-300"
+                                        x-transition:enter-start="opacity-0"
+                                        x-transition:enter-end="opacity-100"
+                                        x-transition:leave="transition-opacity ease-linear duration-300"
+                                        x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                      ></div> -->
+                                <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+                                    x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                                    x-transition:leave="transition ease-in-out duration-300 transform"
+                                    x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full">
+                                    <div class="bg-[#F29434] flex flex-col h-screen text-white p-2">
+                                        <button @click="open=false" class="inline-flex justify-start">
+                                            <i data-feather="x"></i>
+                                        </button>
+                                        <!-- //new  -->
+                                        <div class="flex flex-col">
+                                            <a href="#">
+                                                <span
+                                                    className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Home</span>
+                                            </a>
+                                            <a href="#">
+                                                <span
+                                                    className="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">About</span>
+                                            </a>
+                                            <a href="#"><span
+                                                    class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Roadmap</span></a>
+                                            <a href="#"><span
+                                                    class="tracking-widest font-normal hover:border-white hover:border-b cursor-pointer">Team</span></a>
+                                        </div>
+                                        <!-- end new  -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://wafilife-media.wafilife.com/uploads/2022/03/logo-v22.png" alt="Logo">
+                    </div>
+                    <div class="w-full hidden md:block">
+                        <div class="flex space-x-0  mx-32 ">
+                            <div class="flex border-b-2 border-[#F29434] w-full">
+                                <input type="text" placeholder=" বইয়ের নাম ও লেখক দিয়ে অনুসন্ধান করুন"
+                                    class="border-t border-l border-r border-gray-200 w-full">
+                            </div>
+                            <div>
+                                <button type="submit"
+                                    class="bg-[#F29434] text-white px-3 py-2 rounded-tr-md rounded-br-md"><i
+                                        data-feather="search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <i data-feather="facebook" class="hover:text-blue-500 text-[#F29434]"></i>
+                        <i data-feather="twitter" class="hover:text-blue-300 text-[#F29434]"></i>
+                        <i data-feather="youtube" class="hover:text-red-500 text-[#F29434]"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="border-y border-gray-200 hidden md:block">
+            <div class="container w-7xl mx-auto">
+                <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                    <div class="flex justify-start items-center space-x-0">
+                        <a href="#"
+                            class="hover:bg-[#F23534] bg-[#F23534] text-white hover:text-white py-2 px-4">হোম</a>
+                        <a href="./header.html" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বই</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">জেনারেল বই</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বিষয়</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">লেখক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রকাশক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">বইমেলা ২০২২</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রি-অর্ডার</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">প্রসাধনী</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">পোশাক</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">ব্লগ</a>
+                        <a href="#" class="hover:bg-[#F23534] hover:text-white py-2 px-4">স্টেশনারী</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- slide  -->
+    <section class="hidden md:block">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div class="owl-carousel owl-theme" id="slide">
+                    <div class="item">
+                        <img src="https://wafilife-media.wafilife.com/uploads/2021/03/%E0%A6%B8%E0%A7%87%E0%A6%B0%E0%A6%BE-%E0%A7%AB%E0%A7%A6-%E0%A6%AC%E0%A6%87%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%BE_desktop.jpg"
+                            alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="https://wafilife-media.wafilife.com/uploads/2021/06/hair-food-slider.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                        <img src="https://wafilife-media.wafilife.com/uploads/2022/05/naviforce_slider_2022.jpg"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- book card  -->
+    <section>
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div
+                    class="grid grid-cols-1 auto-rows-{1fr} sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 gap-x-10 justify-center items-center gap-x-10 gap-y-20">
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস (দুই
+                                        খন্ড)</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস (দুই
+                                        খন্ড)</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস (দুই
+                                        খন্ড)</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস (দুই
+                                        খন্ড)</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex h-full">
+                        <div
+                            class="flex h-full flex-col shadow hover:shadow-xl hover:scale-110 p-2 hover:rounded-md transform transition-all duration-300 justify-start items-start">
+                            <div class="relative">
+                                <img src="https://o.remove.bg/downloads/c3e90b42-4146-4dd7-8668-a97430e2bf7d/book-569807-removebg-preview.png"
+                                    alt="">
+                                <div
+                                    class="absolute top-[-15px] left-[-15px] inline flex flex-col justify-center items-center w-11 h-11 bg-red-500 rounded-full p-1 text-xs text-white">
+                                    <span>40%</span>
+                                    <span>ছাড়</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2 mt-2 ml-1">
+                                <h1 class="text-[16px] font-bold text-[#333]"><a href="#"
+                                        class="hover:underline hover:decoration-solid ">মুসলিম জাতির ইতিহাস (দুই
+                                        খন্ড)</a>
+                                </h1>
+                                <h1 class="text-[#888] text-md font-normal">হায়াত মাহমুদ</h1>
+                                <h1 class="flex space-x-3">
+                                    <span class="text-[#888] text-md line-through">198 <span
+                                            class="text-lg">৳</span></span>
+                                    <span class="text-red-500 text-md font-semibold">138 ৳</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- footer  -->
+    <footer class="bg-[#1D1F24]">
+        <div class="container w-7xl mx-auto">
+            <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                <div
+                    class="grid grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 justify-between items-start text-white py-9 md:gap-x-5 lg:gap-x-20 gap-y-10 lg:gap-y-10">
+                    <div class="lg:col-span-1 flex flex-col space-y-3">
+                        <img src="https://wafilife-media.wafilife.com/uploads/2021/06/wafi-bangla-logo.png" width="48%"
+                            alt="">
+                        <p class="text-[#999]">Wafilife is a leading book shop in Bangladesh. We offer thousands of
+                            islamic, general and
+                            academic books at a discounted price. We provide good packaging with low shipping cost all
+                            over the Bangladesh.</p>
+                    </div>
+                    <div
+                        class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-5 gap-y-10">
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">প্রয়োজনীয় লিংক</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">জনপ্রিয়</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold pb-3">যোগাযোগ</h1>
+                            <div class="flex flex-col space-y-2  text-[#999]">
+                                <a href="#" class="hover:text-white">যোগাযোগ করুন</a>
+                                <a href="#" class="hover:text-white">ব্লগ</a>
+                                <a href="#" class="hover:text-white">শপিং ব্যাগ</a>
+                                <a href="#" class="hover:text-white">আপনার পছন্দের তালিকা</a>
+                                <a href="#" class="hover:text-white">প্রশ্নোত্তর</a>
+                                <a href="#" class="hover:text-white">কিভাবে কেনাকাটা করবেন ?</a>
+                                <a href="#" class="hover:text-white">শর্তাবলী</a>
+                                <a href="#" class="hover:text-white">রিফান্ড নীতিমালা</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-[#22252C] py-6">
+            <div class="container w-7xl mx-auto">
+                <div class="mx-[.7rem] md:mx-[1rem] lg:mx-[2rem] xl:mx-[4rem] 2xl:mx-[10rem]">
+                    <p class="text-white">Copyright © 2022 Wafilife.com</p>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <script>
+        feather.replace()
+    </script>
+</body>
+
+</html>

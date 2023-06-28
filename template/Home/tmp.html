@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <style>
+        .oswald {
+            font-family: "Oswald";
+        }
+
+        .font-normal {
+            font-weight: 100;
+        }
+    </style>
+
+    <!-- owl  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .owl-theme {
+            position: relative;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            left: 34px;
+            bottom: 50%;
+            background-color: white;
+            width: 45px;
+            height: auto;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #020000;
+            font-size: 2rem;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            right: 34px;
+            bottom: 50%;
+            background-color: white;
+            width: 45px;
+            height: auto;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #020000;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="flex space-y-20 flex-col py-20">
+        <div class="flex justify-center items-center">
+            <h1 class="text-3xl font-bold text-center">EXPLORE ACCESSORIES</h1>
+        </div>
+
+        <div class="owl-carousel owl-theme px-20">
+            <div class="item">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/2096/3333/products/That_sdisgusting1_600x.jpg?v=1653016493"
+                        alt="" />
+                </div>
+                <div>
+                    <h1 class="oswald text-center font-semibold tracking-[.1rem]">
+                        MEEPO Donut 105mm Hub Motor Kit
+                    </h1>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/2096/3333/products/cyclone-wheels-165mm-red-1500_600x.jpg?v=1650942491"
+                        alt="" />
+                </div>
+                <div>
+                    <h1 class="oswald text-center font-semibold tracking-[.1rem]">
+                        MEEPO Donut 105mm Hub Motor Kit
+                    </h1>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/2096/3333/products/105donutwheel_600x.jpg?v=1651224660"
+                        alt="" />
+                </div>
+                <div>
+                    <h1 class="oswald text-center font-semibold tracking-[.1rem]">
+                        MEEPO Donut 105mm Hub Motor Kit
+                    </h1>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/2096/3333/products/handle2_600x.jpg?v=1631258251"
+                        alt="" />
+                </div>
+                <div>
+                    <h1 class="oswald text-center font-semibold tracking-[.1rem]">
+                        MEEPO Donut 105mm Hub Motor Kit
+                    </h1>
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/2096/3333/products/1_28dce2c6-2991-4e90-9bfd-95d652fed9ac_600x.jpg?v=1632813426"
+                        alt="" />
+                </div>
+                <div>
+                    <h1 class="oswald text-center font-semibold tracking-[.1rem]">
+                        MEEPO Donut 105mm Hub Motor Kit
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center items-center">
+            <button class="bg-orange-500 oswald tracking-[.16rem] px-7 py-3 text-white">
+                View All Product
+            </button>
+        </div>
+    </section>
+    <script>
+        $(function () {
+            // Owl Carousel
+            var owl = $(".owl-carousel");
+            owl.owlCarousel({
+                items: 4,
+                margin: 10,
+                loop: true,
+                nav: true,
+                dots: false,
+            });
+        });
+    </script>
+</body>
+
+</html>
